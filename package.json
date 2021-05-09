@@ -1,0 +1,19 @@
+{
+  "name": "monster-hunter-discord-bot",
+  "version": "1.0.0",
+  "description": "provide fun daily challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrystalAQuick/Monster-Hunter-Discord-Bot.git"
+  },
+  "author": "Crystal Quick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrystalAQuick/Monster-Hunter-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/CrystalAQuick/Monster-Hunter-Discord-Bot#readme"
+}
