@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/CrystalAQuick/Monster-Hunter-Discord-Bot/issues"
   },
-  "homepage": "https://github.com/CrystalAQuick/Monster-Hunter-Discord-Bot#readme"
+  "homepage": "https://github.com/CrystalAQuick/Monster-Hunter-Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
 }
