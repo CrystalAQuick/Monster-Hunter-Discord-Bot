@@ -58,21 +58,23 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
 
-    if (reaction.emoji.name === '♥') {
-        await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.add(config.ROLE_MONSTER_HUNTER_FREEDOM_UNITE);
-      }
-      if (reaction.emoji.name === '3️⃣') {
-        await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.add(config.ROLE_MONSTER_HUNTER_3_ULTIMATE);
-      }
-      if (reaction.emoji.name === '4️⃣') {
-        await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.add(config.ROLE_MONSTER_HUNTER_4_ULTIMATE);
-      } else return;
+    if (reaction.message.channel.id == config.REACTION_CHANNEL) {
+      if (reaction.emoji.name === '♥') {
+          await reaction.message.guild.members.cache
+            .get(user.id)
+            .roles.add(config.ROLE_MONSTER_HUNTER_FREEDOM_UNITE);
+        }
+        if (reaction.emoji.name === '3️⃣') {
+          await reaction.message.guild.members.cache
+            .get(user.id)
+            .roles.add(config.ROLE_MONSTER_HUNTER_3_ULTIMATE);
+        }
+        if (reaction.emoji.name === '4️⃣') {
+          await reaction.message.guild.members.cache
+            .get(user.id)
+            .roles.add(config.ROLE_MONSTER_HUNTER_4_ULTIMATE);
+        } else return;
+    }
 });
 
 //  Removing reaction-rol function
@@ -81,21 +83,24 @@ client.on('messageReactionRemove', async (reaction, user) => {
     if (reaction.partial) await reaction.fetch();
     if (user.bot) return;
     if (!reaction.message.guild) return;
-    if (reaction.emoji.name === '♥') {
-    await reaction.message.guild.members.cache
-        .get(user.id)
-        .roles.remove(config.ROLE_MONSTER_HUNTER_FREEDOM_UNITE);
+
+    if (reaction.message.channel.id == config.REACTION_CHANNEL) {
+      if (reaction.emoji.name === '♥') {
+      await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.remove(config.ROLE_MONSTER_HUNTER_FREEDOM_UNITE);
+      }
+      if (reaction.emoji.name === '3️⃣') {
+      await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.remove(config.ROLE_MONSTER_HUNTER_3_ULTIMATE);
+      }
+      if (reaction.emoji.name === '4️⃣') {
+      await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.remove(config.ROLE_MONSTER_HUNTER_4_ULTIMATE);
+      } else return;
     }
-    if (reaction.emoji.name === '3️⃣') {
-    await reaction.message.guild.members.cache
-        .get(user.id)
-        .roles.remove(config.ROLE_MONSTER_HUNTER_3_ULTIMATE);
-    }
-    if (reaction.emoji.name === '4️⃣') {
-    await reaction.message.guild.members.cache
-        .get(user.id)
-        .roles.remove(config.ROLE_MONSTER_HUNTER_4_ULTIMATE);
-    } else return;
   });
 
 
