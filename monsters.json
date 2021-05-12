@@ -1,0 +1,303 @@
+{
+    "Aknosom": {
+        "species": "Bird Wyvern",
+        "threat": "⭐⭐ (2)",
+        "locations": ["Shrine Ruins", "Frost Islands"],
+        "smallest": 755.23,
+        "largest": "??"
+    },
+    "Almudron": {
+        "species": "Leviathan",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐ (7)",
+        "locations": ["Shrine Ruins", "Sandy Plains", "Flooded Forest"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Anjanath": {
+        "species": "Brute Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐ (6)",
+        "locations": ["Shrine Ruins", "Sandy Plains", "Flooded Forest", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Apex Arzuros": {
+        "species": "Fanged Beast",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐ (8)",
+        "locations": ["Rampage"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Apex Diablos": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10)",
+        "locations": ["Rampage"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Apex Mizutsune": {
+        "species": "Leviathan",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9)",
+        "locations": ["Rampage"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Apex Rathalos": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9)",
+        "locations": ["Rampage"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Apex Rathian": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐ (8)",
+        "locations": ["Rampage"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Arzuros": {
+        "species": "Fanged Beast",
+        "threat": "⭐ (1)",
+        "locations": ["Shrine Ruins", "Flooded Forest"],
+        "smallest": 502.28,
+        "largest": 686.46
+    },
+    "Barioth": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐ (5)",
+        "locations": ["Frost Islands"],
+        "smallest": 1881.89,
+        "largest": "??"
+    },
+    "Barroth": {
+        "species": "Brute Wyvern",
+        "threat": "⭐⭐⭐ (3)",
+        "locations": ["Sandy Plains"],
+        "smallest": 1244.76,
+        "largest": "??"
+    },
+    "Basarios": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐ (3)",
+        "locations": ["Sandy Plains", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Bazelgeuse": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐ (8)",
+        "locations": ["Shrine Ruins", "Frost Islands", "Sandy Plains", "Flooded Forest", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Bishaten": {
+        "species": "Fanged Beast",
+        "threat": "⭐⭐⭐⭐ (4)",
+        "locations": ["Shrine Ruins", "Flooded Forest"],
+        "smallest": "??",
+        "largest": 1063.50
+    },
+    "Chameleos": {
+        "species": "Elder Dragon",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐ (8)",
+        "locations": ["Shrine Ruins", "Flooded Forest"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Diablos": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐ (7)",
+        "locations": ["Sandy Plains"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Goss Harag": {
+        "species": "Fanged Beast",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐ (7)",
+        "locations": ["Frost Islands"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Great Baggi": {
+        "species": "Bird Wyvern",
+        "threat": "⭐ (1)",
+        "locations": ["Frost Islands"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Great Izuchi": {
+        "species": "Bird Wyvern",
+        "threat": "⭐ (1)",
+        "locations": ["Shrine Ruins", "Frost Islands"],
+        "smallest": 1343.87,
+        "largest": 946.08
+    },
+    "Great Wroggi": {
+        "species": "Bird Wyvern",
+        "threat": "⭐⭐ (2)",
+        "locations": ["Shrine Ruins", "Flooded Forest", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Jyuratodus": {
+        "species": "Piscine Wyvern",
+        "threat": "⭐⭐⭐⭐ (4)",
+        "locations": ["Flooded Forest"],
+        "smallest": 1855.71,
+        "largest": "??"
+    },
+    "Khezu": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐ (2)",
+        "locations": ["Frost Islands", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Kulu-Ya-Ku": {
+        "species": "Bird Wyvern",
+        "threat": "⭐⭐ (2)",
+        "locations": ["Shrine Ruins", "Sandy Plains", "Flooded Forest", "Lava Caverns"],
+        "smallest": 793.09,
+        "largest": 1108.52
+    },
+    "Kushala Daora": {
+        "species": "Elder Dragon",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐ (8)",
+        "locations": ["Frost Islands", "Sandy Plains"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Lagombi": {
+        "species": "Fanged Beast",
+        "threat": "⭐ (1)",
+        "locations": ["Frost Islands"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Magnamalo": {
+        "species": "Fanged Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐ (7)",
+        "locations": ["Shrine Ruins", "Frost Islands", "Lava Caverns"],
+        "smallest": 1602.38,
+        "largest": 2276.11
+    },
+    "Mizutsune": {
+        "species": "Leviathan",
+        "threat": "⭐⭐⭐⭐⭐⭐ (6)",
+        "locations": ["Shrine Ruins", "Frost Islands", "Flooded Forest"],
+        "smallest": "??",
+        "largest": 2271.80
+    },
+    "Nargacuga": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐ (6)",
+        "locations": ["Shrine Ruins", "Flooded Forest"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Pukei-Pukei": {
+        "species": "Bird Wyvern",
+        "threat": "⭐⭐⭐⭐ (4)",
+        "locations": ["Shrine Ruins", "Sandy Plains", "Flooded Forest"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Rajang": {
+        "species": "Fanged Beast",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐ (8)",
+        "locations": ["Shrine Ruins", "Frost Islands", "Sandy Plains", "Flooded Forest", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Rakna-Kadaki": {
+        "species": "Temnoceran",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐ (7)",
+        "locations": ["Sandy Plains", "Lava Caverns"],
+        "smallest": "??",
+        "largest": 1071.16
+    },
+    "Rathalos": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐ (6)",
+        "locations": ["Shrine Ruins", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Rathian": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐ (4)",
+        "locations": ["Shrine Ruins", "Sandy Plains", "Flooded Forest", "Lava Caverns"],
+        "smallest": 2192.96,
+        "largest": "??"
+    },
+    "Royal Ludroth": {
+        "species": "Leviathan",
+        "threat": "⭐⭐⭐ (3)",
+        "locations": ["Flooded Forest", "Lava Caverns"],
+        "smallest": 1376.33,
+        "largest": "??"
+    },
+    "Somnacanth": {
+        "species": "Leviathan",
+        "threat": "⭐⭐⭐⭐⭐ (5)",
+        "locations": ["Frost Islands", "Flooded Forest", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Teostra": {
+        "species": "Elder Dragon",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐ (8)",
+        "locations": ["Sandy Plains", "Lava Caverns"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Tetranodon": {
+        "species": "Amphibian",
+        "threat": "⭐⭐ (2)",
+        "locations": ["Shrine Ruins", "Frost Islands", "Lava Caverns"],
+        "smallest": "??",
+        "largest": 1206.23
+    },
+    "Thunder Serpent Narwa": {
+        "species": "Elder Dragon",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10)",
+        "locations": ["Coral Palace"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Tigrex": {
+        "species": "Flying Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐ (7)",
+        "locations": ["Frost Islands", "Sandy Plains", "Lava Caverns"],
+        "smallest": 1747,
+        "largest": "??"
+    },
+    "Tobi-Kadachi": {
+        "species": "Fanged Wyvern",
+        "threat": "⭐⭐⭐⭐⭐ (5)",
+        "locations": ["Shrine Ruins", "Flooded Forest"],
+        "smallest": 1274.50,
+        "largest": 1404.56
+    },
+    "Volvidon": {
+        "species": "Fanged Beast",
+        "threat": "⭐⭐⭐⭐ (4)",
+        "locations": ["Sandy Plains", "Lava Caverns"],
+        "smallest": 625.43,
+        "largest": 824.24
+    },
+    "Wind Serpent Ibushi": {
+        "species": "Elder Dragon",
+        "threat": "⭐⭐⭐⭐⭐⭐⭐⭐⭐ (9)",
+        "locations": ["Rampage"],
+        "smallest": "??",
+        "largest": "??"
+    },
+    "Zinogre": {
+        "species": "Fanged Wyvern",
+        "threat": "⭐⭐⭐⭐⭐⭐ (6)",
+        "locations": ["Shrine Ruins", "Flooded Forest"],
+        "smallest": "??",
+        "largest": "??"
+    }
+}
