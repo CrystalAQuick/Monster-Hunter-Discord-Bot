@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const bot = require("./messages.json");
+const roleReactions = require("./reactions.json");
 
 const { challenges } = require("./challenges");
 
@@ -10,6 +11,7 @@ const client = new Discord.Client({
 
 const prefix = "!";
 
+// replys to user depending on command
 client.on("message", async message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
@@ -27,6 +29,11 @@ client.on("message", async message => {
       message.channel.send(`${answer[Math.floor(Math.random() * answer.length)]}`);
     }
   }
+
+  // if (command === "challenge") { // TODO: figure out a better way to do this. add challenges to messages.json?
+  //   message.reply(challenges[Math.floor(Math.random() * challenges.length)]);
+  // }
+
 });
 
 // Adding reaction-role function
@@ -37,21 +44,21 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (!reaction.message.guild) return;
 
     if (reaction.message.channel.id == config.REACTION_CHANNEL) {
-      if (reaction.emoji.name === '🌎') {
+      var reactions = roleReactions.messageContents.Reactions.reactions;
+      var addRole = Object.values(reactions).indexOf(reaction.emoji.name);
+      var role = [
+        config.ROLE_MONSTER_HUNTER_WORLD,
+        config.ROLE_MONSTER_HUNTER_RISE,
+        config.ROLE_MONSTER_HUNTER_4_ULTIMATE,
+        config.ROLE_MONSTER_HUNTER_3_ULTIMATE
+      ];
+
+      if (Object.values(reactions).indexOf(reaction.emoji.name) != -1) {
           await reaction.message.guild.members.cache
             .get(user.id)
-            .roles.add(config.ROLE_MONSTER_HUNTER_FREEDOM_UNITE);
-        }
-        if (reaction.emoji.name === '3️⃣') {
-          await reaction.message.guild.members.cache
-            .get(user.id)
-            .roles.add(config.ROLE_MONSTER_HUNTER_3_ULTIMATE);
-        }
-        if (reaction.emoji.name === '4️⃣') {
-          await reaction.message.guild.members.cache
-            .get(user.id)
-            .roles.add(config.ROLE_MONSTER_HUNTER_4_ULTIMATE);
-        } else return;
+            .roles.add(role[addRole]);
+      } else return;
+
     }
 });
 
@@ -63,21 +70,22 @@ client.on('messageReactionRemove', async (reaction, user) => {
     if (!reaction.message.guild) return;
 
     if (reaction.message.channel.id == config.REACTION_CHANNEL) {
-      if (reaction.emoji.name === '♥') {
-      await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.remove(config.ROLE_MONSTER_HUNTER_FREEDOM_UNITE);
-      }
-      if (reaction.emoji.name === '3️⃣') {
-      await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.remove(config.ROLE_MONSTER_HUNTER_3_ULTIMATE);
-      }
-      if (reaction.emoji.name === '4️⃣') {
-      await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.remove(config.ROLE_MONSTER_HUNTER_4_ULTIMATE);
+      var reactions = roleReactions.messageContents.Reactions.reactions;
+      var addRole = Object.values(reactions).indexOf(reaction.emoji.name);
+      var role = [
+        config.ROLE_MONSTER_HUNTER_WORLD,
+        config.ROLE_MONSTER_HUNTER_RISE,
+        config.ROLE_MONSTER_HUNTER_4_ULTIMATE,
+        config.ROLE_MONSTER_HUNTER_3_ULTIMATE
+      ];
+
+      if (Object.values(reactions).indexOf(reaction.emoji.name) != -1) {
+          await reaction.message.guild.members.cache
+            .get(user.id)
+            .roles.remove(role[addRole]);
       } else return;
+
+
     }
   });
 
