@@ -1,0 +1,31 @@
+{
+    "messageContents" :
+    {
+        "Greetings": {
+            "questions" : ["hi", "hello", "hey", "heyo"],
+            "answer" : ["Hi there", "Oh hello", "Nice to see you"]
+        },
+        "Farewell": {
+            "questions" : ["bye", "byebye", "seeya", "night", "good night"],
+            "answer" : ["See you later then"]
+        },
+        "Help": {
+            "questions" : ["help"],
+            "answer" : [
+                "I'm here to help! This is a list of commands that you can use.\n!challenge\n Will give you a challenge to complete\n That is all for now.\n:smile:"
+            ]
+        },
+        "RoleShoutout": {
+            "questions" : ["updaterolereaction"],
+            "answer" : [
+                "Well, hello there! :wave:\nMy name is Hinoa and I am your guild maiden!\nIf you would like to add a role to your profile, you can use any of the reactions below and I will add it to your hunter rank. :slight_smile:\n:dog: adds **MH Rise**\n:earth_americas: adds **MH World**\n:french_bread: adds **MH 4**\n:fish: adds **MH 3**"
+            ]
+        },
+        "Challenges": {
+            "questions" : ["challenge"],
+            "answer" : [
+               ""
+            ]
+        },
+    }
+}

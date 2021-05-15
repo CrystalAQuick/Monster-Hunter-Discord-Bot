@@ -29,6 +29,8 @@ const challenges = [
     "Sever the tail (if applicable)",
     "Hunt the monster without wearing any armour",
     "Hunt a high rank monster wearing low rank armour",
+    "Complete a 2v2 race (Capture)",
+    "Complete a 2v2 race (Kill)",
 ];
 
 module.exports = {challenges};

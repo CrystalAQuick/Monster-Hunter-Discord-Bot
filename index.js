@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+const bot = require("./messages.json");
 
 const { challenges } = require("./challenges");
 
@@ -9,7 +10,7 @@ const client = new Discord.Client({
 
 const prefix = "!";
 
-client.on("message", function(message) {
+client.on("message", async message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -17,23 +18,14 @@ client.on("message", function(message) {
   const args = commandBody.split(' ');
   const command = args.shift().toLowerCase();
 
-  if (command === "ping") {
-    const timeTaken = Date.now() - message.createdTimestamp;
-    message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);
-  }
+  var botReplies = Object.values(bot.messageContents);
 
-  if (command === "sum") {
-    const numArgs = args.map(x => parseFloat(x));
-    const sum = numArgs.reduce((counter, x) => counter += x);
-    message.reply(`The sum of all the arguments you provided is ${sum}!`);
-  }
-
-  if (command === "hello" || command === "hey" || command === "hi") {
-    message.reply(`${command}! <3`);
-  }
-
-  if (command === "challenge") {
-    message.reply(challenges[Math.floor(Math.random() * challenges.length)]);
+  for (var i = 0; i < botReplies.length; i++) {
+    var question = botReplies[i].questions;
+    var answer  = botReplies[i].answer;
+    if (Object.values(question).indexOf(command) != -1) {
+      message.channel.send(`${answer[Math.floor(Math.random() * answer.length)]}`);
+    }
   }
 });
 
@@ -45,7 +37,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (!reaction.message.guild) return;
 
     if (reaction.message.channel.id == config.REACTION_CHANNEL) {
-      if (reaction.emoji.name === '♥') {
+      if (reaction.emoji.name === '🌎') {
           await reaction.message.guild.members.cache
             .get(user.id)
             .roles.add(config.ROLE_MONSTER_HUNTER_FREEDOM_UNITE);
@@ -88,7 +80,5 @@ client.on('messageReactionRemove', async (reaction, user) => {
       } else return;
     }
   });
-
-
 
 client.login(config.BOT_TOKEN);
