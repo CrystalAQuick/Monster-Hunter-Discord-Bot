@@ -1,0 +1,11 @@
+{
+    "messageContents" :
+    {
+        "Reactions": {
+            "reactions" : ["🌎", "🐶", "🥖", "🐟"],
+            "addRole" : [
+               
+            ]
+        }
+    }
+}
