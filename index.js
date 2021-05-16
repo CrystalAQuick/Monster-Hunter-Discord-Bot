@@ -2,8 +2,9 @@ const Discord = require("discord.js");
 const config = require("./config.json");
 const bot = require("./messages.json");
 const roleReactions = require("./reactions.json");
-
-const { challenges } = require("./challenges");
+const monsters = require("./monsters.json");
+const { MessageAttachment } = require("discord.js");
+const fs = require('fs')
 
 const client = new Discord.Client({
     partials: ['MESSAGE', 'REACTION', 'CHANNEL'],
@@ -25,16 +26,60 @@ client.on("message", async message => {
   for (var i = 0; i < botReplies.length; i++) {
     var question = botReplies[i].questions;
     var answer  = botReplies[i].answer;
+
     if (Object.values(question).indexOf(command) != -1) {
-      message.channel.send(`${answer[Math.floor(Math.random() * answer.length)]}`);
+      messageToSend = `${answer[Math.floor(Math.random() * answer.length)]}`; // building a reply
+
+      if (botReplies[5].questions === question) { // checking for daily challenge
+        var monsterNames = Object.keys(monsters.Monsters);
+        var monsterValues = Object.values(monsters.Monsters);
+        var randomMonster = Math.floor(Math.random() * monsterNames.length);
+        var monster = monsterNames[randomMonster];
+        var monsterValue = monsterValues[randomMonster]; // .species, .threat etc
+        var challengeList = Object.values(botReplies[4].answer);
+        var challenge = challengeList[Math.floor(Math.random() * challengeList.length)]; // random challenge
+
+        messageToSend = cardMessage(monster, monsterValue.species, challenge, monsterValue.threat, monsterValue.value);
+        message.channel.send(messageToSend);
+        break;
+      }
+
+
+      message.channel.send(`${messageToSend}, ${message.author.toString()}`);
     }
   }
 
-  // if (command === "challenge") { // TODO: figure out a better way to do this. add challenges to messages.json?
-  //   message.reply(challenges[Math.floor(Math.random() * challenges.length)]);
-  // }
-
 });
+
+function cardMessage(monsterName, species, challenge, threat) {
+  let path = `./images/${monsterName}.png`;
+
+  if (fs.existsSync(path)) {
+    var monsterImage = new MessageAttachment(`./images/${monsterName}.png`);
+  } else {
+    let path = `./images/${monsterName}.jpg`;
+    if (fs.existsSync(path)) {
+      var monsterImage = new MessageAttachment(`./images/${monsterName}.jpg`);
+    } else {
+      var monsterImage = new MessageAttachment(`./images/monsterNotFound.png`);
+    }
+  }
+
+  console.log(monsterImage);
+
+  const challengeCard = new Discord.MessageEmbed()
+    .setColor('#FF0000')
+    .setTitle(monsterName)
+    .setAuthor('Daily Challenge')
+    .setDescription(`Species: ${species}`)
+    .attachFiles(monsterImage)
+    .setThumbnail(`attachment://${monsterName}.png`)
+    .addFields(
+      { name: 'Challenge', value: `${challenge}\n Recommended Hunter level: 6`},
+      { name: 'Threat', value: threat, inline: true },
+    )
+  return challengeCard;
+}
 
 // Adding reaction-role function
 client.on('messageReactionAdd', async (reaction, user) => {
