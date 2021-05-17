@@ -44,7 +44,6 @@ client.on("message", async message => {
         break;
       }
 
-
       message.channel.send(`${messageToSend}, ${message.author.toString()}`);
     }
   }
@@ -52,20 +51,23 @@ client.on("message", async message => {
 });
 
 function cardMessage(monsterName, species, challenge, threat) {
-  let path = `./images/${monsterName}.png`;
+  let monsterNameTrim = monsterName.trim().replace(/\s/g, '');
+  let path = `./images/${monsterNameTrim}.png`;
+  let image = '';
 
   if (fs.existsSync(path)) {
-    var monsterImage = new MessageAttachment(`./images/${monsterName}.png`);
+    var monsterImage = new MessageAttachment(`./images/${monsterNameTrim}.png`);
+    image = `${monsterNameTrim}.png`;
   } else {
-    let path = `./images/${monsterName}.jpg`;
+    let path = `./images/${monsterNameTrim}.jpg`;
     if (fs.existsSync(path)) {
-      var monsterImage = new MessageAttachment(`./images/${monsterName}.jpg`);
+      var monsterImage = new MessageAttachment(`./images/${monsterNameTrim}.jpg`);
+      image = `${monsterNameTrim}.jpg`;
     } else {
       var monsterImage = new MessageAttachment(`./images/monsterNotFound.png`);
+      image = 'monsterNotFound.png';
     }
   }
-
-  console.log(monsterImage);
 
   const challengeCard = new Discord.MessageEmbed()
     .setColor('#FF0000')
@@ -73,7 +75,7 @@ function cardMessage(monsterName, species, challenge, threat) {
     .setAuthor('Daily Challenge')
     .setDescription(`Species: ${species}`)
     .attachFiles(monsterImage)
-    .setThumbnail(`attachment://${monsterName}.png`)
+    .setThumbnail(`attachment://${image}`)
     .addFields(
       { name: 'Challenge', value: `${challenge}\n Recommended Hunter level: 6`},
       { name: 'Threat', value: threat, inline: true },
