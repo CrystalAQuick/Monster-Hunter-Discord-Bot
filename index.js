@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
+const fs = require('fs')
 const config = require("./config.json");
 const bot = require("./messages.json");
 const roleReactions = require("./reactions.json");
 const monsters = require("./monsters.json");
 const { MessageAttachment } = require("discord.js");
-const fs = require('fs')
 
 const client = new Discord.Client({
     partials: ['MESSAGE', 'REACTION', 'CHANNEL'],
@@ -12,8 +12,8 @@ const client = new Discord.Client({
 
 const prefix = "!";
 
-// replys to user depending on command
-client.on("message", async message => {
+// replies to user depending on command
+client.on('message', function(message) {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -40,6 +40,7 @@ client.on("message", async message => {
         var challenge = challengeList[Math.floor(Math.random() * challengeList.length)]; // random challenge
 
         messageToSend = cardMessage(monster, monsterValue.species, challenge, monsterValue.threat, monsterValue.value);
+
         message.channel.send(messageToSend);
         break;
       }
@@ -48,6 +49,36 @@ client.on("message", async message => {
     }
   }
 
+});
+
+client.on('message', function(message) {
+
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  const commandBody = message.content.slice(prefix.length);
+  const args = commandBody.split(' ');
+  const command = args.shift().toLowerCase();
+
+  if (command === "startdailychallenge" && message.channel.id === config.DAILY_CHALLENGE_CHANNEL) {
+    var checkminutes = 2, checkthe_interval = checkminutes * 60 * 100; //This checks every 10 minutes, change 10 to whatever minute you'd like
+    setInterval(function() {
+      var monsterNames = Object.keys(monsters.Monsters);
+      var monsterValues = Object.values(monsters.Monsters);
+      var randomMonster = Math.floor(Math.random() * monsterNames.length);
+      var monster = monsterNames[randomMonster];
+      var monsterValue = monsterValues[randomMonster]; // .species, .threat etc
+      var botReplies = Object.values(bot.messageContents);
+
+      var challengeList = Object.values(botReplies[4].answer);
+      var challenge = challengeList[Math.floor(Math.random() * challengeList.length)]; // random challenge
+
+      messageToSend = cardMessage(monster, monsterValue.species, challenge, monsterValue.threat, monsterValue.value);
+
+      message.channel.send(messageToSend);
+    }, checkthe_interval);
+
+  }
 });
 
 function cardMessage(monsterName, species, challenge, threat) {
@@ -131,8 +162,6 @@ client.on('messageReactionRemove', async (reaction, user) => {
             .get(user.id)
             .roles.remove(role[addRole]);
       } else return;
-
-
     }
   });
 
