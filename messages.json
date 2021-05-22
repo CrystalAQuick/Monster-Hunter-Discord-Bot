@@ -62,7 +62,7 @@
         "monsterChallenge": {
             "questions" : ["daily", "daily challenge", "dailychallenge"],
             "answer" : [
-                "Today's daily challenge is to hunt the :"
+                ""
             ]
         }
     }
